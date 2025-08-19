@@ -143,3 +143,42 @@ window.addEventListener('load', () => {
         typeWriter(tagline, originalText, 30);
     }, 1000);
 });
+
+
+
+// Floating particles animation
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Random starting position
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (6 + Math.random() * 4) + 's';
+        
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Initialize particles when page loads
+window.addEventListener('load', createParticles);
+
+// Add parallax effect to hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroContent = document.querySelector('.hero-content');
+    const particles = document.querySelectorAll('.particle');
+    
+    if (heroContent) {
+        heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
+    }
+    
+    particles.forEach((particle, index) => {
+        const speed = 0.1 + (index % 3) * 0.05;
+        particle.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
