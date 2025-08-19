@@ -338,7 +338,7 @@ section {
   margin: 0 auto;
 }
 
-.skill-item {
+ .skill-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -393,6 +393,12 @@ section {
 .skill-item span {
   font-weight: 600;
   color: var(--text-primary);
+}
+.skill-item img, 
+.skill-item i {
+  width: 48px;
+  height: 48px;
+  padding-bottom: 2px;
 }
 
 /* Projects Section */
