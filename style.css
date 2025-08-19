@@ -388,17 +388,23 @@ section {
   font-size: 3rem;
   color: var(--accent-primary);
   margin-bottom: 1rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-item img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  object-fit: contain;
 }
 
 .skill-item span {
   font-weight: 600;
   color: var(--text-primary);
-}
-.skill-item img, 
-.skill-item i {
-  width: 48px;
-  height: 48px;
-  padding-bottom: 2px;
 }
 
 /* Projects Section */
