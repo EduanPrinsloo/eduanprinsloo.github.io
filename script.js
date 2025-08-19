@@ -26,7 +26,25 @@ themeToggle.addEventListener('click', () => {
     body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
+    
+    // Update navbar background immediately
+    updateNavbarBackground();
 });
+
+// Function to update navbar background
+function updateNavbarBackground() {
+    const navbar = document.querySelector('.navbar');
+    const theme = body.getAttribute('data-theme');
+    if (window.scrollY > 100) {
+        navbar.style.backgroundColor = theme === 'light' 
+            ? 'rgba(255, 255, 255, 0.98)' 
+            : 'rgba(15, 23, 42, 0.98)';
+    } else {
+        navbar.style.backgroundColor = theme === 'light' 
+            ? 'rgba(255, 255, 255, 0.95)' 
+            : 'rgba(15, 23, 42, 0.95)';
+    }
+}
 
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
@@ -58,18 +76,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Navbar background on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.backgroundColor = body.getAttribute('data-theme') === 'light' 
-            ? 'rgba(255, 255, 255, 0.98)' 
-            : 'rgba(15, 23, 42, 0.98)';
-    } else {
-        navbar.style.backgroundColor = body.getAttribute('data-theme') === 'light' 
-            ? 'rgba(255, 255, 255, 0.95)' 
-            : 'rgba(15, 23, 42, 0.95)';
-    }
-});
+window.addEventListener('scroll', updateNavbarBackground);
 
 // Active navigation link highlighting
 window.addEventListener('scroll', () => {
