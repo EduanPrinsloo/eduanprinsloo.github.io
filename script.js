@@ -22,11 +22,11 @@ updateThemeIcon(currentTheme);
 themeToggle.addEventListener('click', () => {
     const currentTheme = body.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
+
     body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
-    
+
     // Update navbar background immediately
     updateNavbarBackground();
 });
@@ -36,12 +36,12 @@ function updateNavbarBackground() {
     const navbar = document.querySelector('.navbar');
     const theme = body.getAttribute('data-theme');
     if (window.scrollY > 100) {
-        navbar.style.backgroundColor = theme === 'light' 
-            ? 'rgba(255, 255, 255, 0.98)' 
+        navbar.style.backgroundColor = theme === 'light'
+            ? 'rgba(255, 255, 255, 0.98)'
             : 'rgba(15, 23, 42, 0.98)';
     } else {
-        navbar.style.backgroundColor = theme === 'light' 
-            ? 'rgba(255, 255, 255, 0.95)' 
+        navbar.style.backgroundColor = theme === 'light'
+            ? 'rgba(255, 255, 255, 0.95)'
             : 'rgba(15, 23, 42, 0.95)';
     }
 }
@@ -63,7 +63,7 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -82,7 +82,7 @@ window.addEventListener('scroll', updateNavbarBackground);
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -117,7 +117,7 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
     const animateElements = document.querySelectorAll('.skill-item, .project-card, .contact-link');
-    
+
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function typeWriter(element, text, speed = 50) {
     let i = 0;
     element.innerHTML = '';
-    
+
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -138,7 +138,7 @@ function typeWriter(element, text, speed = 50) {
             setTimeout(type, speed);
         }
     }
-    
+
     type();
 }
 
@@ -161,12 +161,12 @@ function createParticles() {
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        
+
         // Random starting position
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 6 + 's';
         particle.style.animationDuration = (6 + Math.random() * 4) + 's';
-        
+
         particlesContainer.appendChild(particle);
     }
 }
@@ -179,11 +179,11 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const heroContent = document.querySelector('.hero-content');
     const particles = document.querySelectorAll('.particle');
-    
+
     if (heroContent) {
         heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
     }
-    
+
     particles.forEach((particle, index) => {
         const speed = 0.1 + (index % 3) * 0.05;
         particle.style.transform = `translateY(${scrolled * speed}px)`;
