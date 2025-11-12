@@ -561,6 +561,10 @@ section {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="light"] .contact-link:hover {
+  border: 1px solid #000000;
+}
+
 .contact-link::before {
   content: '';
   position: absolute;
