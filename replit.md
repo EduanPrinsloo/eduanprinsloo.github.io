@@ -6,6 +6,13 @@ This is a personal portfolio website for Eduan Prinsloo, a Backend Software Engi
 
 The portfolio features a dark/light theme toggle, smooth scrolling navigation, and a mobile-responsive layout. The application runs entirely in the browser with no backend server or database dependencies.
 
+## Recent Changes
+
+**November 12, 2025**: Enhanced light mode text readability
+- Added custom styling for About Me and Featured Projects section titles in light mode
+- These section titles now display in pure black (#000000) when light theme is active
+- Improves contrast and readability while maintaining the existing dark mode appearance
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

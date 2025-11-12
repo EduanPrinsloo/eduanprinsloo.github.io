@@ -420,6 +420,10 @@ section {
   background-color: var(--bg-secondary);
 }
 
+[data-theme="light"] .projects .section-title {
+  color: #000000;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
