@@ -329,6 +329,14 @@ section {
   margin-bottom: 1.5rem;
 }
 
+[data-theme="light"] .about .section-title {
+  color: #000000;
+}
+
+[data-theme="light"] .about-content p {
+  color: #000000;
+}
+
 /* Skills Section */
 .skills-grid {
   display: grid;
